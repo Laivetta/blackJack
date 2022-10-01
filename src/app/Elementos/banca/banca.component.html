@@ -1,0 +1,9 @@
+<h2>Banca</h2>
+
+<button type="button" (click)="mostrarCartasRestantes()">mostrar</button>
+
+<div class="envoltorio">
+  <div id="cartas-banca" *ngFor="let item of arrayImagenesBanca; let i = index">
+    <img [src]="arrayImagenesBanca[i]" />
+  </div>
+</div>

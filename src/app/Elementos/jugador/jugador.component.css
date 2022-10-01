@@ -1,0 +1,18 @@
+.envoltorio{
+    overflow:hidden;
+    width:700px;
+}
+
+.envoltorio div {
+ /* cualquier altura mayor que el total de sumar la anchura de las img */
+ width:700px;
+}
+
+
+img {
+    height: 175px;
+    width:  125px;
+    margin: 2px;
+    border: black solid;
+    float:left;
+}

@@ -1,0 +1,20 @@
+<div id="banca" class="container">
+    <app-banca></app-banca>
+</div>
+
+<div id="jugador" class="container">
+        <!-- el valor de la variable cartaNuevaJugador del padre(mesa) se la paso al hijo(jugador)  asignandola en la variable cartaRecibida -->
+    <app-jugador [valorCartaRecibida]="valor" ></app-jugador>
+
+</div>
+
+
+
+
+<div  class="container">
+    <!-- <app-boton-parar id="botones"></app-boton-parar> -->
+
+    <!-- onBotonSeguir viene del HIJO boton-seguir y esta emitiendo el valor numerico de la carta aleatoria para sumar su  valor al padre que la recibe en la funcion valorCarta del PADRE-->
+
+    <!-- <app-boton-seguir id="botones" (onBotonSeguir)="valorCarta($event)" ></app-boton-seguir> -->
+</div> -->
