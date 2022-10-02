@@ -87,13 +87,17 @@ export class BancaComponent implements OnInit, OnChanges {
       }
     }
 
-    setTimeout(() => {
-      if (this.banderaJugadorParo) {
-        if (this.puntosJugador > 21) {alert('Jugador perdio porque salio del juego primero');
-        } else if (this.puntosJugador <= 21 && this.sumaCartasBanca > 21) {alert('jugador gano porque la Banca se paso ');
-        } else if (this.puntosJugador <= 21 && this.sumaCartasBanca <= 21 && this.puntosJugador < this.sumaCartasBanca) {alert('banca gano')
-      } else if(this.puntosJugador <= 21 && this.sumaCartasBanca <= 21 && this.puntosJugador > this.sumaCartasBanca){alert('jugador gano')}
-      } else if (this.puntosJugador === this.sumaCartasBanca) {alert("empate")}
+    setTimeout(() => 
+    {
+      if (this.banderaJugadorParo) 
+      {
+        if (this.puntosJugador > 21) {alert('BANCA gano porque jugador perdio porque salio del juego primero')}
+         else if (this.puntosJugador <= 21 && this.sumaCartasBanca > 21) {alert('JUGADOR gano')}
+         else if (this.puntosJugador <= 21 && this.sumaCartasBanca <= 21 && this.puntosJugador < this.sumaCartasBanca) {alert('BANCA gano')}
+         else if(this.puntosJugador <= 21 && this.sumaCartasBanca <= 21 && this.puntosJugador > this.sumaCartasBanca){alert('JUGADOR gano')}
+         else if (this.puntosJugador === this.sumaCartasBanca) {alert("EMPATE")}
+      } 
     }, 500);
+    
   }
 }

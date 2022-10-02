@@ -1,4 +1,5 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
+import {Router} from "@angular/router"
 
 @Component({
   selector: 'app-mesa',
@@ -10,7 +11,7 @@ export class MesaComponent implements OnInit, OnDestroy {
   banderaJugador: boolean = false
   puntosJugador : number;
 
-  constructor() {
+  constructor(private router: Router) {
     this.puntosJugador =  0;
    }
 
@@ -33,6 +34,8 @@ export class MesaComponent implements OnInit, OnDestroy {
   }
 
   reiniciar(){
-    
+    this.router.navigateByUrl('/', { skipLocationChange: true }).then(() => {
+      this.router.navigate(["mesa"]);
+  }); 
   }
 }

@@ -81,7 +81,8 @@ export class JugadorComponent implements OnInit{
 
     if(this.sumaCartas > 21){
       this.bandera = false;
-      setTimeout(() => {alert("perdio")},500);
+      setTimeout(() => {alert("BANCA gano")},500);
+      
     }
 
     //emito los puntos del jugador al padre
@@ -92,11 +93,6 @@ export class JugadorComponent implements OnInit{
   parar(){
     this.onPararJugador.emit(this.sumaCartas);
   }
-
-  reiniciar(){
-    this.onReiniciar.emit();
-  }
-
 
 
 }
