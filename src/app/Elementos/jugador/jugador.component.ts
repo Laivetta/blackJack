@@ -9,13 +9,12 @@ import {MazoServiceService} from "../../Services/mazo-service.service"
 })
 export class JugadorComponent implements OnInit{
 
-  //esta variable viene del padre Mesa y era el valor que se obtuvo al presionar el boton SEGUIR
-  @Input() cartaRecibida : String = "";
+  @Output() onPuntosJugador = new EventEmitter();
+  @Output() onPararJugador = new EventEmitter();
+  @Output() onReiniciar = new EventEmitter();
 
-  @Input() valorCartaRecibida : number = 0;
-  
   sumaCartas: number;
-
+  bandera : boolean = true;
 
    //array jugador
    arrayJugador: String[];
@@ -45,14 +44,6 @@ export class JugadorComponent implements OnInit{
     
   }
 
-  // sumarValorCarta(parametro: number){
-  //   this.sumaCartas += parametro;  
-    
-  //    if(this.sumaCartas > 21){
-  //     alert("pasado")
-  //   }
-  // }
-
   AgregarArrayEnImagenesJugador(carta: String){
     //aca tengo que vaciar el arrayImagenesJugador porque sino duplico todo
     
@@ -61,7 +52,6 @@ export class JugadorComponent implements OnInit{
       this.arrayImagenesJugador.push(item);
 
   }
-
 
   calcularValorCarta(carta: String) : number {
     //el split divide el string cada vez que encuentra el - . Despues obtengo la primer parte de la carta que es un numero
@@ -89,20 +79,22 @@ export class JugadorComponent implements OnInit{
 
     this.sumaCartas += this.calcularValorCarta(cartaAgregada)
 
-        if(this.sumaCartas > 21){
-      console.log(this.arrayJugador)
-    }
-
-    
-    // if(this.sumaCartas > 21){
-    //   alert("perdio")
-    // }
-
-
     if(this.sumaCartas > 21){
-      setTimeout(() => {alert("perdio")},300)
+      this.bandera = false;
+      setTimeout(() => {alert("perdio")},500);
     }
 
+    //emito los puntos del jugador al padre
+    this.onPuntosJugador.emit(this.sumaCartas);
+  }
+
+
+  parar(){
+    this.onPararJugador.emit(this.sumaCartas);
+  }
+
+  reiniciar(){
+    this.onReiniciar.emit();
   }
 
 

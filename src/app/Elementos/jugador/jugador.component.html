@@ -10,8 +10,9 @@
 
 </div>
 
-<button type="button" (click)="seguir()"  class="btn btn-success">Seguir</button>
-<button type="button"  class="btn btn-danger">Parar</button>
+<button type="button" (click)="seguir()" *ngIf="bandera" class="btn btn-success">Seguir</button>
+<button type="button" (click)="parar()" class="btn btn-danger">Parar</button>
+<button type="button" (click)="reiniciar()" class="btn btn-danger">Reiniciar</button>
 
 <!-- 
 <div class="container">

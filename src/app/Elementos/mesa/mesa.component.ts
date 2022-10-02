@@ -1,32 +1,38 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 
 @Component({
   selector: 'app-mesa',
   templateUrl: './mesa.component.html',
   styleUrls: ['./mesa.component.css']
 })
-export class MesaComponent implements OnInit {
+export class MesaComponent implements OnInit, OnDestroy {
 
-  //esta variable la recibo desde el boton SEGUIR y tambien se la paso al JUGADOR
-  @Input() cartaNuevaJugador : String = ""
+  banderaJugador: boolean = false
+  puntosJugador : number;
 
-  //esta variable la recibo desde el boton SEGUIR y se la paso al jugador, es el valor de la carta para sumar 
-  @Input() valor : number = 0;
-
-  constructor() { }
+  constructor() {
+    this.puntosJugador =  0;
+   }
 
   ngOnInit(): void {
   }
 
-  //esta es la funcion que recibe de la emision del HIJO un evento (la carta aleatoria)
-  cartaPedidaJugador(carta: String){
-      this.cartaNuevaJugador =  carta;
-  }
+  ngOnDestroy(): void{
 
-  
-  valorCarta(parametro: number){
-    this.valor = parametro
   }
 
 
+  capturarPuntosJugador(p_puntosJugador: number){
+    console.log("valor cartas jugador: " + p_puntosJugador)
+  }
+
+
+  cambiarBandera(p_puntosJugador: number){
+    this.puntosJugador = p_puntosJugador 
+    this.banderaJugador = true
+  }
+
+  reiniciar(){
+    
+  }
 }

@@ -1,6 +1,11 @@
-<h2>Banca</h2>
+<h2>Banca  suma: {{sumaCartasBanca}} </h2>
+<!-- <br>
+bandera si el jugador paro =>  {{banderaJugadorParo}}
+<br>
+puntos jugador:  {{puntosJugador}} -->
 
-<button type="button" (click)="mostrarCartasRestantes()">mostrar</button>
+<br>
+<button type="button" (click)="mostrarCartasRestantes()">Mostrar cartas restantes en Mazo</button>
 
 <div class="envoltorio">
   <div id="cartas-banca" *ngFor="let item of arrayImagenesBanca; let i = index">
