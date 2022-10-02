@@ -20,7 +20,11 @@ export class MazoServiceService {
 
     this.arrayJugador = [];
     this.arrayImagenesJugador = [];
+
+  
   }
+
+  
 
   //MAZO ORIGINAL
   generarMazoInicial(): String[] {

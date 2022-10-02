@@ -16,3 +16,7 @@ img {
     border: black solid;
     float:left;
 }
+
+button{
+    margin: 2px;
+}
