@@ -1,5 +1,6 @@
+<br>
 <h2>Jugador - suma: {{sumaCartas}}</h2>
-<div class="envoltorio">
+<div class="envoltorio col-md-6">
   <!-- <div id="cartas-jugador" *ngFor="let item of this.mazoService.devolverArrayImagenesJugador(); let i = index">
     <img [src]="this.mazoService.devolverArrayImagenesJugador()[i]" />
   </div> -->
@@ -7,16 +8,13 @@
   <div id="cartas-jugador" *ngFor="let item of arrayImagenesJugador; let i = index">
     <img [src]="arrayImagenesJugador[i]" />
   </div>
-
-
-    
-
 </div>
 
-<button type="button" (click)="seguir()" *ngIf="bandera" class="btn btn-success">Seguir</button>
-<button type="button" (click)="parar()" class="btn btn-danger">Parar</button>
 
 <div class="col-md-6" *ngIf="banderaAs">
+  <br>
+  Elegir el valor que le quiera asignar al As
+  <br>
   <div class="form-check">
       <input class="form-check-input" type="radio" name="radio" id="flexRadioDefault1" checked  value=1 [(ngModel)]="valorAs">
       <label class="form-check-label" for="flexRadioDefault1">
@@ -29,9 +27,16 @@
         Once
       </label>
   </div>
-
+<br>
   <button (click)="elegirValorAs()" class="btn btn-info">Elegir</button>
 </div>
+<br>
+
+
+<button type="button" (click)="seguir()" *ngIf="bandera" class="btn btn-success">Seguir</button>
+<button type="button" (click)="parar()" class="btn btn-danger">Parar</button>
+
+
 
 
 
