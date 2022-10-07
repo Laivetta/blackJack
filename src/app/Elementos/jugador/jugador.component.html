@@ -8,10 +8,32 @@
     <img [src]="arrayImagenesJugador[i]" />
   </div>
 
+
+    
+
 </div>
 
 <button type="button" (click)="seguir()" *ngIf="bandera" class="btn btn-success">Seguir</button>
 <button type="button" (click)="parar()" class="btn btn-danger">Parar</button>
+
+<div class="col-md-6" *ngIf="banderaAs">
+  <div class="form-check">
+      <input class="form-check-input" type="radio" name="radio" id="flexRadioDefault1" checked  value=1 [(ngModel)]="valorAs">
+      <label class="form-check-label" for="flexRadioDefault1">
+        Uno
+      </label>
+    </div>
+    <div class="form-check">
+      <input class="form-check-input" type="radio" name="radio" id="flexRadioDefault2" value=11 [(ngModel)]="valorAs" >
+      <label class="form-check-label" for="flexRadioDefault2">
+        Once
+      </label>
+  </div>
+
+  <button (click)="elegirValorAs()" class="btn btn-info">Elegir</button>
+</div>
+
+
 
 
 <!-- 

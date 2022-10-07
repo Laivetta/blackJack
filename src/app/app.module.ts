@@ -13,6 +13,8 @@ import { LoginComponent } from "../app/Elementos/login/login.component";
 import {MazoServiceService} from "../app/Services/mazo-service.service";
 import { HomeComponent } from './Elementos/home/home.component';
 
+import {FormsModule} from "@angular/forms"
+
 
 @NgModule({
   declarations: [
@@ -27,7 +29,8 @@ import { HomeComponent } from './Elementos/home/home.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule
   ],
   providers: [MazoServiceService,],
   bootstrap: [AppComponent]
