@@ -1,10 +1,9 @@
 .envoltorio{
     overflow:hidden;
-    width:700px;
+    width:700px; 
 }
 
 .envoltorio div {
- /* cualquier altura mayor que el total de sumar la anchura de las img */
  width:700px;
 }
 

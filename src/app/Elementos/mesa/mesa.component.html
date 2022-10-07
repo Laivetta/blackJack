@@ -1,4 +1,4 @@
-<div >
+<div class="mesa">
   <div id="banca" class="container">
       <app-banca [banderaJugadorParo]="banderaJugador"  [puntosJugador]="puntosJugador" ></app-banca>
   </div>
@@ -7,6 +7,7 @@
         <app-jugador (onPuntosJugador)="capturarPuntosJugador($event)" (onPararJugador)="cambiarBandera($event)" (onReiniciar)="reiniciar()"></app-jugador>
   </div>
   <div class="container">
+    <br>
     <button type="button" (click)="reiniciar()" class="btn btn-dark">Reiniciar Juego</button>
   </div>
 

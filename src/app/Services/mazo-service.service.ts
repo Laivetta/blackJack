@@ -14,8 +14,8 @@ export class MazoServiceService {
   arrayImagenesJugador: String[];
 
   constructor() {
-    //this.arrayNumero = ['2', '3', '4','5', '6', '7', '8', '9','10', 'A','J', 'Q', 'K' ];
-    this.arrayNumero = ['2', '3', 'A'];
+    this.arrayNumero = ['2', '3', '4','5', '6', '7', '8', '9','10', 'A','J', 'Q', 'K' ];
+    //this.arrayNumero = ['2', '3', 'A'];
     this.arrayTipo = ['D', 'H', 'S', 'C'];
     this.arraryMazo = [];
 

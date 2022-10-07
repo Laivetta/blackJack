@@ -1,10 +1,6 @@
 <br>
 <h2>Jugador - suma: {{sumaCartas}}</h2>
 <div class="envoltorio col-md-6">
-  <!-- <div id="cartas-jugador" *ngFor="let item of this.mazoService.devolverArrayImagenesJugador(); let i = index">
-    <img [src]="this.mazoService.devolverArrayImagenesJugador()[i]" />
-  </div> -->
-
   <div id="cartas-jugador" *ngFor="let item of arrayImagenesJugador; let i = index">
     <img [src]="arrayImagenesJugador[i]" />
   </div>
@@ -32,17 +28,7 @@
 </div>
 <br>
 
-
 <button type="button" (click)="seguir()" *ngIf="bandera" class="btn btn-success">Seguir</button>
 <button type="button" (click)="parar()" class="btn btn-danger">Parar</button>
+<br>
 
-
-
-
-
-
-<!-- 
-<div class="container">
-  <app-boton-parar></app-boton-parar>
-  <app-boton-seguir (onBotonSeguir)="sumarValorCarta($event)" ></app-boton-seguir>
-</div> -->
