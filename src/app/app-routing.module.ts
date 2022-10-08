@@ -9,9 +9,8 @@ import { LoginComponent } from './Elementos/login/login.component';
 const routes: Routes = [
   {path:"login", component: LoginComponent},
   {path: "mesa", component:  MesaComponent},
-  {path: "mazo", component: BancaComponent},
-  {path: "jugador", component: JugadorComponent},
-  {path: "home", component:HomeComponent}
+   {path: "integrantes", component:HomeComponent},
+  {path:"", redirectTo:"integrantes", pathMatch:"full"}
 ];
 
 @NgModule({

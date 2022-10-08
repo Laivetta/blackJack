@@ -1,0 +1,17 @@
+body{
+    background-image: url("https://img.freepik.com/foto-gratis/blackjack-tarjetas-manos-sobre-mesa-roja_1423-152.jpg?w=1060&t=st=1665210620~exp=1665211220~hmac=f5ddc268b4521cac930ba6c5e12c90d2e19fe7bda0a32398f3fb7ba6dcc557af");
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    height: 100vh
+    
+}
+
+label{
+    color: white;
+}
+
+p{
+    color: coral;
+}
+
