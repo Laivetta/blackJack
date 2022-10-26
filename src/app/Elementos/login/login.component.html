@@ -7,25 +7,18 @@
     <form>
         <div class="mb-3">
           <label for="txtLogin" class="form-label">Cuenta Login</label>
-          <input type="text" class="form-control" id="txtLogin" name="txtLogin">
+          <input type="text" class="form-control" id="txtLogin" name="login" [(ngModel)]="usuario.login">
           </div>
         <div class="mb-3">
           <label for="txtPass" class="form-label">Password</label>
-          <input type="password" class="form-control" id="txtPass" name="txtPass">
+          <input type="password" class="form-control" id="txtPass" name="password" [(ngModel)]="usuario.password" >
         </div>
 
-        <div class="mb-3">
-          <label for="disabledSelect" class="form-label">Seleccionar Rol</label>
-          <select id="disabledSelect" class="form-select">
-            <option>Rol Administrador</option>
-            <option>Rol Jugador</option>
-          </select>
-        </div>
-
-        <button type="button" class="btn btn-primary">Ingresar</button>
+       
+        <button type="button" class="btn btn-primary" (click)="autenticar()" >Ingresar</button>
       </form>
 
-      <p>NO  FUNCIONAL ... EN UNA PROXIMA ENTREGA</p>
+    
 </div>
 
 

@@ -104,6 +104,7 @@ export class JugadorComponent implements OnInit {
 
   parar() {
     this.onPararJugador.emit(this.sumaCartas);
+    this.bandera=false;
   }
 
 

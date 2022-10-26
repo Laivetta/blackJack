@@ -29,6 +29,7 @@ export class MazoServiceService {
 
   //MAZO ORIGINAL
   generarMazoInicial(): String[] {
+    this.arraryMazo = []
     this.arrayNumero.forEach((n) => {
       this.arrayTipo.forEach((t) => {
         this.arraryMazo.push(n + '-' + t);

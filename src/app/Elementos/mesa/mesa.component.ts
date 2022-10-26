@@ -1,5 +1,6 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import {Router} from "@angular/router"
+import {MazoServiceService} from "../../Services/mazo-service.service"
 
 @Component({
   selector: 'app-mesa',
@@ -11,7 +12,7 @@ export class MesaComponent implements OnInit, OnDestroy {
   banderaJugador: boolean = false
   puntosJugador : number;
 
-  constructor(private router: Router) {
+  constructor(private router: Router, private mazo: MazoServiceService) {
     this.puntosJugador =  0;
    }
 
@@ -34,6 +35,7 @@ export class MesaComponent implements OnInit, OnDestroy {
   }
 
   reiniciar(){
+    this.mazo.generarMazoInicial();
     this.router.navigateByUrl('/', { skipLocationChange: true }).then(() => {
       this.router.navigate(["mesa"]);
   }); 
