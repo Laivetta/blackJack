@@ -15,8 +15,9 @@ import { HomeComponent } from './Elementos/home/home.component';
 
 import {FormsModule, ReactiveFormsModule} from "@angular/forms"
 
-import {LoginService} from "../app/Services/login.service"
-import {HttpClientModule} from "@angular/common/http"
+import {JugadorService} from "./Services/jugador.service"
+import {HttpClientModule} from "@angular/common/http";
+import { AltaComponent } from "../app/Elementos/alta/alta.component"
 
 
 @NgModule({
@@ -28,6 +29,7 @@ import {HttpClientModule} from "@angular/common/http"
     MesaComponent,
     LoginComponent,
     HomeComponent,
+    AltaComponent,
 
   ],
   imports: [
@@ -37,7 +39,7 @@ import {HttpClientModule} from "@angular/common/http"
     ReactiveFormsModule,
     HttpClientModule
   ],
-  providers: [MazoServiceService, LoginService],
+  providers: [MazoServiceService, JugadorService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

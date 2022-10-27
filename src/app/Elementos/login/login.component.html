@@ -1,10 +1,10 @@
 
-  <body>
-    
+  <body>  
  
 
 <div class="container col-md-6  ">
-    <form [formGroup]="formularioLogin" >
+  <h2>Login Jugador</h2>  
+  <form [formGroup]="formularioLogin" >
         <div class="mb-3">
           <label for="txtUsuario" class="form-label">Usuario</label>
           <input type="text" class="form-control" id="txtUsuario" name="username" formControlName="username" >
@@ -18,7 +18,7 @@
           {{mensajeError}}
         </p>
        
-        <button type="button" class="btn btn-primary" (click)="autenticar()" >Ingresar</button>
+        <button type="button" class="btn btn-primary" (click)="login()" >Ingresar</button>
       </form>
 
     

@@ -1,9 +1,11 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { UsuarioI } from '../../Interfaces/usuario-i';
 import { Router } from '@angular/router';
 import {LocalStorageService} from "../../Services/local-storage.service"
 import { UntypedFormBuilder, UntypedFormGroup, Validators } from '@angular/forms';
-import {LoginService} from "../../Services/login.service"
+import {JugadorService} from "../../Services/jugador.service"
+import { Subscription } from 'rxjs';
+import { ThisReceiver } from '@angular/compiler';
 
 
 @Component({
@@ -11,17 +13,21 @@ import {LoginService} from "../../Services/login.service"
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css'],
 })
-export class LoginComponent implements OnInit {
+export class LoginComponent implements OnInit, OnDestroy {
   formularioLogin: UntypedFormGroup
   mensajeError: string = ""
+  suscripcion = new Subscription();
 
   usuario: UsuarioI = {} as UsuarioI;
 
-  constructor(private router: Router, private local: LocalStorageService, private formBuilder: UntypedFormBuilder, private loginSevice: LoginService  ) {
+  constructor(private router: Router, private local: LocalStorageService, private formBuilder: UntypedFormBuilder, private JugadorService: JugadorService  ) {
     this.formularioLogin=this.formBuilder.group({
       username: ["", Validators.required],
       password: ["", Validators.required]
     }) 
+  }
+  ngOnDestroy(): void {
+    this.suscripcion.unsubscribe();
   }
 
   ngOnInit(): void {}
@@ -38,26 +44,29 @@ export class LoginComponent implements OnInit {
   // }
 
 
-  autenticar(){
+  login(){
     if(this.formularioLogin.invalid){
      this.mensajeError= "debe cargar todos los datos" ;
 
       setTimeout(() => {this.mensajeError=""}, 2000)
     } else {
 
-      //traigo todos los datos del formuluario y los asigno a una variable
-      const valorUsuario = this.formularioLogin.value;
-      console.log(valorUsuario);
+      //traigo todos los datos del formuluario y los asigno a la variable valorUsuario
+      const valorUsuarioFormulario = this.formularioLogin.value;
+      console.log(valorUsuarioFormulario);
 
-      this.loginSevice.login(valorUsuario.username, valorUsuario.password).subscribe({
-        next: () => {
-          alert("login exitoso")
+      this.suscripcion.add(
+      this.JugadorService.login(valorUsuarioFormulario.username, valorUsuarioFormulario.password).subscribe({
+        next: (respuesta) => {
+          localStorage.setItem("token", respuesta.jwt)
+          console.log(localStorage.getItem("token"))
+          this.router.navigateByUrl("mesa")
+          
          },
         error: (e) =>{
-          alert("eror al hacer login: " + e)
+          alert("error al hacer login: " + e.error.message)
         } 
-      })
-     
+      }))
     }
 
 
