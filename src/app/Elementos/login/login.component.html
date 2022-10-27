@@ -4,16 +4,19 @@
  
 
 <div class="container col-md-6  ">
-    <form>
+    <form [formGroup]="formularioLogin" >
         <div class="mb-3">
-          <label for="txtLogin" class="form-label">Cuenta Login</label>
-          <input type="text" class="form-control" id="txtLogin" name="login" [(ngModel)]="usuario.login">
+          <label for="txtUsuario" class="form-label">Usuario</label>
+          <input type="text" class="form-control" id="txtUsuario" name="username" formControlName="username" >
           </div>
         <div class="mb-3">
           <label for="txtPass" class="form-label">Password</label>
-          <input type="password" class="form-control" id="txtPass" name="password" [(ngModel)]="usuario.password" >
+          <input type="password" class="form-control" id="txtPass" name="password" formControlName="password">
         </div>
 
+        <p style="color:red" *ngIf="mensajeError">
+          {{mensajeError}}
+        </p>
        
         <button type="button" class="btn btn-primary" (click)="autenticar()" >Ingresar</button>
       </form>

@@ -13,7 +13,10 @@ import { LoginComponent } from "../app/Elementos/login/login.component";
 import {MazoServiceService} from "../app/Services/mazo-service.service";
 import { HomeComponent } from './Elementos/home/home.component';
 
-import {FormsModule} from "@angular/forms"
+import {FormsModule, ReactiveFormsModule} from "@angular/forms"
+
+import {LoginService} from "../app/Services/login.service"
+import {HttpClientModule} from "@angular/common/http"
 
 
 @NgModule({
@@ -30,9 +33,11 @@ import {FormsModule} from "@angular/forms"
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule,
+    HttpClientModule
   ],
-  providers: [MazoServiceService,],
+  providers: [MazoServiceService, LoginService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
